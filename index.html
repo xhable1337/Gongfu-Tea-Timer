@@ -4,28 +4,28 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Gongfu Tea Timer</title>
+	<title>Таймер для чая (Гунфу)</title>
 	<link rel="stylesheet" href="css/style.css" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-title" content="Tea Timer" />
+	<meta name="apple-mobile-web-app-title" content="Таймер для чая" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 </head>
 <body>
 
 <div id="teaSelection" hidden>
-	<h1>Select tea</h1>
+	<h1>Выберите чай</h1>
 </div>
 
 <div id="timerUI" hidden>
 	<div class="header">
 		<p id="teaNameDiv"></p>
-		<p>Infusion <span id="infusionNumSpan">1</span></p>
+		<p>Пролив №<span id="infusionNumSpan">1</span></p>
 	</div>
 	<span id="timeDisplay">15:00</span>
-	<p class="startButtonP"><button id="startButton">Start</button></p>
+	<p class="startButtonP"><button id="startButton">Начать</button></p>
 	<p id="infusionSwitcherDiv">
-		<button id="prevInfusionButton">Previous</button>
-		<button id="nextInfusionButton">Skip</button>
+		<button id="prevInfusionButton">←</button>
+		<button id="nextInfusionButton">→</button>
 	</p>
 </div>
 
@@ -56,73 +56,17 @@ var request = window.indexedDB.open(APP_NAME, 1);
 
 var teaTypes = [
 	{
-		name: "Green",
-		firstInfusion: 15,
-		nextInfusion: +3,
-		infusions: 5,
-		amount: [3, 3.5],
-		rinse: false,
-	},
-	{
-		name: "Black (small leaf)",
-		firstInfusion: 10,
-		nextInfusion: +5,
-		infusions: 8,
-		amount: 4.5,
-		rinse: true,
-	},
-	{
-		name: "Black (large leaf)",
-		firstInfusion: 15,
-		nextInfusion: +5,
-		infusions: 8,
-		amount: 4,
-		rinse: true,
-	},
-	{
-		name: "White",
+		name: "Да Хун Пао (улун)",
 		firstInfusion: 20,
-		nextInfusion: +5,
-		infusions: 5,
-		amount: [3.5, 4],
-		rinse: false,
-	},
-	{
-		name: "Yellow",
-		firstInfusion: 15,
-		nextInfusion: +5,
-		infusions: 5,
-		amount: [3.5, 4],
-		rinse: false,
-	},
-	{
-		name: "Oolong (strip)",
-		firstInfusion: 20,
-		nextInfusion: +5,
-		infusions: 9,
+		nextInfusion: +10,
+		infusions: 10,
 		amount: [4.5, 5],
 		rinse: true,
 	},
 	{
-		name: "Oolong (ball)",
-		firstInfusion: 25,
-		nextInfusion: +5,
-		infusions: 9,
-		amount: [6, 6.5],
-		rinse: true,
-	},
-	{
-		name: "PuErh (raw)",
-		firstInfusion: 10,
-		nextInfusion: +3,
-		infusions: 15,
-		amount: 5,
-		rinse: true,
-	},
-	{
-		name: "PuErh (ripe)",
-		firstInfusion: 10,
-		nextInfusion: +5,
+		name: "Пуэр",
+		firstInfusion: 20,
+		nextInfusion: +10,
 		infusions: 20,
 		amount: 5,
 		rinse: true,
